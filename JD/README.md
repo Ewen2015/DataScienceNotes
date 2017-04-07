@@ -1,11 +1,30 @@
 ## JingDong Data Competition
 
-According to the scoring standard, it is reasonable to seperate our task into two parts: 
+### Training Data Setup
 
-- Prediction about who would buy any products in the period. 
+#### Introduction
 
-- For those who would buy any products, what would they buy. 
+We considered three ways to build up a training dataset, 
 
+- Start with `user_id`: firstly, predict who would buy anything, and then predict what would they buy.
+    
+- Start with `sku_id`: consider each product as an object, and predict if it would be bought and by whom.
+    
+- Start with `user_id and sku_id` pair: take these pairs as objects and check if the any purchase activity would happen in 5 days.
+    
+
+We finally decided to start with the third method and may consider other ways when time allows.
+
+#### User and Product Pair
+
+Features may be considered:
+
+- **User**: age, sex, level, user_lv_cd, browse_num, addcart_num, delcart_num, buy_num, favor_num, click_num
+- **Product**: attr1, attr2, attr3, cate, brand, comment_num, has_bad_comment, bad_comment_rate, browse_num, addcart_num, delcart_num, buy_num, favor_num, click_num
+- **Behavior**: today_brow_num, today_addcart_num, today_delcart_num, today_buy_num, today_favor_num, today_click_num; 5day_brow_num, 5day_addcart_num, 5day_delcart_num, 5day_buy_num, 5day_favor_num, 5day_click_num;
+
+
+=== 
 
 ### 任务描述：
 
