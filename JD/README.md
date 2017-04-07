@@ -24,7 +24,7 @@ Features may be considered:
 - **Behavior**: today_brow_num, today_addcart_num, today_delcart_num, today_buy_num, today_favor_num, today_click_num; 5day_brow_num, 5day_addcart_num, 5day_delcart_num, 5day_buy_num, 5day_favor_num, 5day_click_num;
 
 
-=== 
+---
 
 ### 任务描述：
 
