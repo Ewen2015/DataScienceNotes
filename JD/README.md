@@ -1,4 +1,4 @@
-## JingDong Data Competition
+## JData Competition
 
 ### Training Data Setup
 
@@ -15,14 +15,19 @@ We considered three ways to build up a training dataset,
 
 We finally decided to start with the third method and may consider other ways when time allows.
 
-#### User and Product Pair
+#### User and Item Pair
 
 Features may be considered:
 
 - **User**: age, sex, level, user_lv_cd, browse_num, addcart_num, delcart_num, buy_num, favor_num, click_num
-- **Product**: attr1, attr2, attr3, cate, brand, comment_num, has_bad_comment, bad_comment_rate, browse_num, addcart_num, delcart_num, buy_num, favor_num, click_num
-- **Behavior**: today_brow_num, today_addcart_num, today_delcart_num, today_buy_num, today_favor_num, today_click_num; 5day_brow_num, 5day_addcart_num, 5day_delcart_num, 5day_buy_num, 5day_favor_num, 5day_click_num;
+- **Item**: attr1, attr2, attr3, cate, brand, comment_num, has_bad_comment, bad_comment_rate, browse_num, addcart_num, delcart_num, buy_num, favor_num, click_num
+- **Behavior**: brow_num_today, addcart_num_today, delcart_num_today, buy_num_today, favor_num_today, click_num_today; brow_num_past, addcart_num_past, delcart_num_past, buy_num_past, favor_num_past, click_num_past;
 
+In particular, the first training data set takes behavior of today (4/10), behavior of past 5 days (4/5 - 4/9), user_table, and item_table as features. The dependent variable is whether any purchase happeds from 4/11 to 4/15. 
+
+#### Discussion
+
+The training data naturaly blocks the user w/o records in today and past 5 days, which can low down the precise of predicting. 
 
 ---
 
