@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1. [Forget `for` Loops](#Forget `for` Loops)
-2. [Plot with `Plotly`](#Plot with `Plotly`#)
+2. [Plot with `Plotly`](#Plot with `Plotly`)
 
 ## Forget `for` Loops
 
@@ -26,9 +26,9 @@ sapply(seq(0.1, 1, 0.1), function(i)
     function(i, j)))
 ```
 
-## Plot with `Plotly`
+August 2, 2017
 
-August 2, 2017 
+## Plot with `Plotly` 
 
 Have used `plotly` in r in school, while just find that it has data visualization tool online. I guess it is better than Tableau, easy to use and can do more than the later one.
 
