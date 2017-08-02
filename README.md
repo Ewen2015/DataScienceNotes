@@ -2,6 +2,7 @@
 
 ## Table of Contents
 1. [Forget `for` Loops](#Forget `for` Loops)
+
 2. [Plot with `Plotly`](#Plot with `Plotly`)
 
 ## Forget `for` Loops
