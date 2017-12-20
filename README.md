@@ -4,7 +4,7 @@ Just a notebook, nothing more.
 ## Data Cleaning
 
 - Data Deduplication
-  - ``recordlinkage``
+  - ``recordlinkage`` ``googletrans``
 
 ## Exploratory Data Analysis
 
