@@ -27,10 +27,11 @@ Just a notebook, nothing more.
  **GossipCat**
  
  - Algorithms:
-   - ``LightGBM``, ``XGBoost``
+   - ``LightGBM``, ``XGBoost``, ``bayes_opt``
  - Stacking
  - Hyperparameter Tuning:
    - Simulated Annealing
+   - Bayesian Optimization
  
  ## Report
  
