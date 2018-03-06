@@ -1,6 +1,14 @@
 # DataScienceNotes
 Just a notebook, nothing more.
 
+## Question Definition 
+
+- Business Understanding
+- Issue Conversion
+  - Target Definition
+  - Population Scoping
+  - Main Feature Selection
+
 ## Feature Engineering -- Background-based
 
 - Graphic Analysis
