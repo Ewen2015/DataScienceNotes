@@ -14,7 +14,7 @@ Just a notebook, nothing more.
 ## Data Loading
 
 - DataFrame
- - ``pandas``
+  - ``pandas``
 
 ## Exploratory Data Analysis
 
