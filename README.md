@@ -1,10 +1,20 @@
 # DataScienceNotes
 Just a notebook, nothing more.
 
+## Feature Engineering -- Background-based
+
+- Graphic Analysis
+- Time Series
+
 ## Data Cleaning
 
 - Data Deduplication
   - ``recordlinkage`` ``googletrans``
+
+## Data Loading
+
+- DataFrame
+ - ``pandas``
 
 ## Exploratory Data Analysis
 
@@ -13,7 +23,7 @@ Just a notebook, nothing more.
 - Visualization
   - ``plotly``
 
-## Feature Engnineering
+## Feature Engnineering -- Technique-based
 
 **GossipCat**
 
