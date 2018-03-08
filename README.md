@@ -1,10 +1,28 @@
 # DataScienceNotes
 Just a notebook, nothing more.
 
+## Question Definition 
+
+- Business Understanding
+- Issue Conversion
+  - Target Definition
+  - Population Scoping
+  - Main Feature Selection
+
+## Feature Engineering -- Background-based
+
+- Graphic Analysis
+- Time Series
+
 ## Data Cleaning
 
 - Data Deduplication
   - ``recordlinkage`` ``googletrans``
+
+## Data Loading
+
+- DataFrame
+  - ``pandas``
 
 ## Exploratory Data Analysis
 
@@ -13,7 +31,7 @@ Just a notebook, nothing more.
 - Visualization
   - ``plotly``
 
-## Feature Engnineering
+## Feature Engnineering -- Technique-based
 
 **GossipCat**
 
