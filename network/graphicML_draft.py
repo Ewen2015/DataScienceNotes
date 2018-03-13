@@ -5,20 +5,6 @@ import networkx as nx
 import itertools 
 
 
-def shortest_path_len(graph, source, target):
-	if nx.has_path(graph, source, target):
-		return nx.shortest_path_length(graph, source, target)
-	else:
-		return None
-
-
-def link_pred_generator(function):
-	def link_pred(graph, source, target):
-		for u, v, p in function(graph, [(source, target)]):
-			return p
-	return link_pred
-
-
 def node_attr(graph, k=6):
 
 	node_attr = []
@@ -34,6 +20,17 @@ def node_attr(graph, k=6):
 
 	return node_attr
 
+def shortest_path_len(graph, source, target):
+	if nx.has_path(graph, source, target):
+		return nx.shortest_path_length(graph, source, target)
+	else:
+		return None
+
+def link_pred_generator(function):
+	def link_pred(graph, source, target):
+		for u, v, p in function(graph, [(source, target)]):
+			return p
+	return link_pred
 
 def edge_attr(graph):
 
@@ -50,7 +47,13 @@ def edge_attr(graph):
 
 	return edge_attr
 
-
 def graph_attr(node_attr, edge_attr):
 	merged = edge_attr.merge(node_attr, how='left', left_on='source', right_on='node').merge(node_attr, how='left', left_on='target', right_on='node')
 	return merged
+
+
+
+
+
+
+

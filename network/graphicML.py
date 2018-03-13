@@ -24,16 +24,27 @@ def link_pred_generator(function):
 			return p
 	return link_pred
 
+def edge(graph):
+	edge_attr = []
+	edge_attr = pd.DataFrame(list(itertools.combinations(list(graph.nodes.keys()), r=2)), columns=['source', 'target'])
+	edge_attr['shortest_path_length'] = edge_attr.apply(lambda x: shortest_path_len(graph, x[0], x[1]), axis=1)
+	edge_attr['efficiency'] = edge_attr.apply(lambda x: nx.efficiency(graph, x[0], x[1]), axis=1)
+	edge_attr['jaccard_coefficient'] = edge_attr.apply(lambda x: link_pred_generator(nx.jaccard_coefficient)(graph, x[0], x[1]), axis=1)
+	edge_attr['resource_allocation_index'] = edge_attr.apply(lambda x: link_pred_generator(nx.resource_allocation_index)(graph, x[0], x[1]), axis=1)
+	edge_attr['adamic_adar_index'] = edge_attr.apply(lambda x: link_pred_generator(nx.adamic_adar_index)(graph, x[0], x[1]), axis=1)
+	edge_attr['preferential_attachment'] = edge_attr.apply(lambda x: link_pred_generator(nx.preferential_attachment)(graph, x[0], x[1]), axis=1)
+	
+	return edge_attr
 
 class Attribute(object):
-	"""docstring for Attribute"""
+
 	def __init__(self, graph):
 		self.graph = graph
 		self.node_attr = pd.DataFrame()
 		self.edge_attr = pd.DataFrame()
 		self.graph_attr = pd.DataFrame()
 
-	def node_attr(self, k=6):
+	def node(self, k=6):
 		degree_cent = pd.DataFrame(list(nx.degree_centrality(self.graph).items()), columns=['node', 'degree_centrality'])
 		closenessCent = pd.DataFrame(list(nx.closeness_centrality(self.graph).items()), columns=['node', 'closeness_centrality'])
 		betweennessCent = pd.DataFrame(list(nx.betweenness_centrality(self.graph, k).items()), columns=['node', 'betweenness_centrality'])
@@ -45,17 +56,13 @@ class Attribute(object):
 		self.node_attr['pagerank'] = pagerank['pagerank']
 		return self.node_attr
 
-	def edge_attr(self):
-		self.edge_attr = pd.DataFrame(list(itertools.combinations(list(self.graph.nodes.keys()), r=2)), columns=['source', 'target'])
-		self.edge_attr['shortest_path_length'] = self.edge_attr.apply(lambda x: shortest_path_len(self.graph, x[0], x[1]), axis=1)
-		self.edge_attr['efficiency'] = self.edge_attr.apply(lambda x: nx.efficiency(self.graph, x[0], x[1]), axis=1)
-
-		self.edge_attr['jaccard_coefficient'] = self.edge_attr.apply(lambda x: link_pred_generator(nx.jaccard_coefficient)(self.graph, x[0], x[1]), axis=1)
-		self.edge_attr['resource_allocation_index'] = self.edge_attr.apply(lambda x: link_pred_generator(nx.resource_allocation_index)(self.graph, x[0], x[1]), axis=1)
-		self.edge_attr['adamic_adar_index'] = self.edge_attr.apply(lambda x: link_pred_generator(nx.adamic_adar_index)(self.graph, x[0], x[1]), axis=1)
-		self.edge_attr['preferential_attachment'] = self.edge_attr.apply(lambda x: link_pred_generator(nx.preferential_attachment)(self.graph, x[0], x[1]), axis=1)
+	def edge(self):
+		self.edge_attr = edge(self.graph)
 		return self.edge_attr
 
-	def graph_attr(self):
+	def graph_attributes(self):
+		self.node_attr = self.node()
+		self.edge_attr = self.edge()
 		self.graph_attr = self.edge_attr.merge(self.node_attr, how='left', left_on='source', right_on='node').merge(self.node_attr, how='left', left_on='target', right_on='node')	
+		self.graph_attr = self.graph_attr.drop(['node_x', 'node_y'], axis=1)
 		return self.graph_attr
