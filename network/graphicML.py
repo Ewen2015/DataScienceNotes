@@ -33,7 +33,6 @@ def edge(graph):
 	edge_attr['resource_allocation_index'] = edge_attr.apply(lambda x: link_pred_generator(nx.resource_allocation_index)(graph, x[0], x[1]), axis=1)
 	edge_attr['adamic_adar_index'] = edge_attr.apply(lambda x: link_pred_generator(nx.adamic_adar_index)(graph, x[0], x[1]), axis=1)
 	edge_attr['preferential_attachment'] = edge_attr.apply(lambda x: link_pred_generator(nx.preferential_attachment)(graph, x[0], x[1]), axis=1)
-	
 	return edge_attr
 
 class Attribute(object):
@@ -44,10 +43,10 @@ class Attribute(object):
 		self.edge_attr = pd.DataFrame()
 		self.graph_attr = pd.DataFrame()
 
-	def node(self, k=6):
+	def node(self):
 		degree_cent = pd.DataFrame(list(nx.degree_centrality(self.graph).items()), columns=['node', 'degree_centrality'])
 		closenessCent = pd.DataFrame(list(nx.closeness_centrality(self.graph).items()), columns=['node', 'closeness_centrality'])
-		betweennessCent = pd.DataFrame(list(nx.betweenness_centrality(self.graph, k).items()), columns=['node', 'betweenness_centrality'])
+		betweennessCent = pd.DataFrame(list(nx.betweenness_centrality(self.graph).items()), columns=['node', 'betweenness_centrality'])
 		pagerank = pd.DataFrame(list(nx.pagerank(self.graph).items()), columns=['node', 'pagerank'])
 
 		self.node_attr = degree_cent
