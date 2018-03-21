@@ -6,8 +6,6 @@ author: 	Ewen Wang
 email: 		wang.enqun@outlook.com
 license: 	Apache License 2.0
 """
-import os
-import numpy as np
 import pandas as pd
 import networkx as nx
 import itertools 
@@ -65,3 +63,14 @@ class Attribute(object):
 		self.graph_attr = self.edge_attr.merge(self.node_attr, how='left', left_on='source', right_on='node').merge(self.node_attr, how='left', left_on='target', right_on='node')	
 		self.graph_attr = self.graph_attr.drop(['node_x', 'node_y'], axis=1)
 		return self.graph_attr
+
+class NodePairs(object):
+	"""docstring for NodePairs"""
+	def __init__(self, data, source, target):
+		super(NodePairs, self).__init__()
+		self.data = data
+		self.source = source
+		self.target = target
+
+	
+		
