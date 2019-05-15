@@ -35,9 +35,10 @@ Just a notebook, nothing more.
 
 **GossipCat**
 
-- Automatically:
+- Technicly:
   - Highly correlated: difference, LR, AUC
-- Manually: 
+- Bussiness Sense:
+  - Groupby
   - Meaningful: ratio
  
  ## Machine Learning
@@ -49,15 +50,19 @@ Just a notebook, nothing more.
    - ``LightGBM``, ``XGBoost``, ``bayes_opt``
  - Stacking
  - Hyperparameter Tuning:
+   - Grid Search
    - Simulated Annealing
    - Bayesian Optimization
  
- ## Report
+ ## Model interpretation
  
  **GossipCat**
  
- - LIME: `lime`
+ - LIME: `lime` (`matplotlib==2.1.0` required)
+ - SHAP: `shap`
+ - Others: `skll`, `skopt`, `eli5`, `graphviz`, `pydotplus`, `xgbfir`, `treeinterpreter`, `pycebox`, `pdpbox`
 
+[Interpretable Machine Learning with Python](http://savvastjortjoglou.com/intrepretable-machine-learning-nfl-combine.html#Feature-Importance)
 
 ## Notes:
 After almost one year working experience of machine learning project in banking industy, I would like to summary several application advice as following:
