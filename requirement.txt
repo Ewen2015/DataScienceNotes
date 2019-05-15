@@ -1,0 +1,46 @@
+# machine learning environment requirement
+
+## software
+Python 3.7.3
+sublime 3.2.1
+chrome
+
+## packages
+gossipcat
+
+seaborn
+plotly
+
+pandas-profiling
+xgboost
+lightgbm
+tensorflow
+tensorflow-gpu
+Keras
+vecstack
+bayesian-optimization
+MLFeatureSelection
+
+## model interpretation
+skll
+skopt
+eli5
+graphviz
+pydotplus
+xgbfir
+treeinterpreter
+pycebox
+pdpbox
+shap
+lime (matplotlib==2.1.0 required)
+
+## package installation
+pip3 download -r requirements.txt
+pip3 install --no-index --find-links /path/to/download/dir/ -r requirements.txt
+
+## python3.7 installation
+tar xf Python-3.7.3.tgz
+cd Python-3.7.3
+./configure
+make
+sudo make install
