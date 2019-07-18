@@ -1,37 +1,46 @@
-# DataScienceNotes
-Just a notebook, nothing more.
+# Data Sciense Consulting
 
-## Question Definition 
+I generaly work as a data science consultant, which combines the role of data scientist and consultant. Based on my working experience, I established a data science project framework to facilate my daily work. Five aspects are summarized in the framework and can be regarded as a work process to fulfill a data science project; as a result and for esay-memorize, I set it as **One Week Data Science Framework**. 
+
+|Day of Week|Key|Content|
+|-----------|---|-------|
+|Monday|    Requirement|  Understand the requirements and define your problem.|
+|Tuesday|   Solution|     Address a data sciense project solution.|
+|Wednesday| Data|         Collect data, explore it, do feature engineering.|
+|Thursday|  Algorithm|    Select best machine learning algorithm, build the model, and tune the parameters.|
+|Friday|    Presentation| Present your finding, insights. Launch your model.|
+
+
+## Monday: Requirement 
 
 - Business Understanding
+- Design Thinking
+
+## Tuesday: Solution 
+
 - Issue Conversion
   - Target Definition
   - Population Scoping
   - Main Feature Selection
 
-## Feature Engineering -- Background-based
+## Wednesday: Data
 
-- Graphic Analysis
-- Time Series
-
-## Data Cleaning
+### Data Processing
 
 - Data Deduplication
   - ``recordlinkage`` ``googletrans``
 
-## Data Loading
-
 - DataFrame
   - ``pandas`` ``dask`` for big data
 
-## Exploratory Data Analysis
+### Exploratory Data Analysis
 
 - Glimpse
   - ``pandas_profiling``
 - Visualization
   - ``plotly``
 
-## Feature Engnineering -- Technique-based
+### Feature Engnineering -- Technique-based
 
 **GossipCat**
 
@@ -41,7 +50,12 @@ Just a notebook, nothing more.
   - Groupby
   - Meaningful: ratio
  
- ## Machine Learning
+ ### Feature Engineering -- Background-based
+
+- Graphic Analysis
+- Time Series
+
+ ## Thursday: Algorithm
  
  **GossipCat**
  - Development:
@@ -54,7 +68,9 @@ Just a notebook, nothing more.
    - Simulated Annealing
    - Bayesian Optimization
  
- ## Model interpretation
+ ## Friday: Presentation
+ 
+ ### Model interpretation
  
  **GossipCat**
  
@@ -63,6 +79,14 @@ Just a notebook, nothing more.
  - Others: `skll`, `skopt`, `eli5`, `graphviz`, `pydotplus`, `xgbfir`, `treeinterpreter`, `pycebox`, `pdpbox`
 
 [Interpretable Machine Learning with Python](http://savvastjortjoglou.com/intrepretable-machine-learning-nfl-combine.html#Feature-Importance)
+
+### Launch
+
+- Architectural thinking
+- Engineering
+- Logging
+
+
 
 ## Notes:
 After almost one year working experience of machine learning project in banking industy, I would like to summary several application advice as following:
