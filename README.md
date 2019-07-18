@@ -14,7 +14,15 @@ I generaly work as a data science consultant, which combines the role of data sc
 ## Monday: Requirement 
 
 - Business Understanding
+
+“Far better an approximate answer to the right question, which is often vague, than an exact answer to the wrong question, which can always be made precise.”
+
+"To be successful, ML projects need to think big from the start by taking into consideration the company structure, customers, company size and internal workflows."
+
+Machine Learning (a data-driven method) is not suitable for Operational Risk Modeling. Two characteristics of operational risk– that it is 1) exposure-based and that 2) extreme losses cannot be extrapolated from recurring losses. Two approaches to model operational risk: 1) data-driven; 2) the scenario-driven point of view is precisely focused on the potential large future losses.
+
 - Design Thinking
+
 
 ## Tuesday: Solution 
 
@@ -23,9 +31,13 @@ I generaly work as a data science consultant, which combines the role of data sc
   - Population Scoping
   - Main Feature Selection
 
+Data leakage is a very critical issue and can be easily ignored. How to properly define a question and correctly build the test, training, and validation is an essential question in machine learning.
+
 ## Wednesday: Data
 
 ### Data Processing
+
+In machine learning, your work generally involves building one long pipeline that starts by taking data in, ends with spitting a model (or predictions) out,  which fits in very naturally with functional programming paradigms.
 
 - Data Deduplication
   - ``recordlinkage`` ``googletrans``
@@ -42,6 +54,8 @@ I generaly work as a data science consultant, which combines the role of data sc
 
 ### Feature Engnineering -- Technique-based
 
+To a significant degree, feature engineering is one the most important two progress in a machine learning modeling project, the other one is parameter tuning. Generally speaking, at the later stage of a modeling project, most score improvements are gained from feature engineering.
+
 **GossipCat**
 
 - Technicly:
@@ -53,6 +67,9 @@ I generaly work as a data science consultant, which combines the role of data sc
  ### Feature Engineering -- Background-based
 
 - Graphic Analysis
+
+Two major applications of Graph Theory: 1) network analysis, like Page Rank and Link Predictions; 2) engineering applications, like traversals.
+
 - Time Series
 
  ## Thursday: Algorithm
@@ -67,6 +84,14 @@ I generaly work as a data science consultant, which combines the role of data sc
    - Grid Search
    - Simulated Annealing
    - Bayesian Optimization
+ 
+ ### Model Evaluation
+ 
+ **Mathematics**
+ 
+ **Business**
+ 
+Considering your clients or boss, "do NOT use AUC-ROC, PR-Curve Area (Average Precision score), etc for business reporting. Use Derived Metrics since they easily capture the essence of your business easily," like fixing the precision (or recall) according to your business and reporting your recall (or precision).
  
  ## Friday: Presentation
  
@@ -85,6 +110,8 @@ I generaly work as a data science consultant, which combines the role of data sc
 - Architectural thinking
 - Engineering
 - Logging
+
+Logging is one of the most underrated features. Two things (5&3) to take away from Logging in Python: 1) FIVE levels of importance that logs can contain(debug, info, warning, error, critical); 2) THREE components to configure a logger in Python (a logger, a formatter, and at least one handler).
 
 
 
