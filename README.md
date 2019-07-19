@@ -20,11 +20,18 @@ I generaly work as a data science consultant, which combines the role of data sc
 - Python
 - Linux
 
+- Issue based consulting
+- Project management
+
 ### Soft skills
 
-- Issue based consulting
 - Communication
 - Leadership
+
+### Industry knowledge
+
+- Banking
+- Retails
 
 ### Thinking
 
