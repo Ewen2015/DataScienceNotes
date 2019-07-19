@@ -11,6 +11,31 @@ I generaly work as a data science consultant, which combines the role of data sc
 |Friday|    Presentation| Present your finding, insights. Launch your model.|
 
 
+## Weekends: Preparation
+
+### Hard skills
+
+- Mathematics, statistics
+- Machine learning
+- Python
+- Linux
+
+### Soft skills
+
+- Issue based consulting
+- Communication
+- Leadership
+
+### Thinking
+
+- Critical thinking
+- Desgin thinking
+- Architectural thinking
+
+### Work style
+- Agile
+- DevOps
+
 ## Monday: Requirement 
 
 - Business Understanding
