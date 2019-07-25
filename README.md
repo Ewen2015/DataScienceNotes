@@ -121,6 +121,22 @@ Two major applications of Graph Theory: 1) network analysis, like Page Rank and 
  
  **Mathematics**
  
+ `How to choose metric for binary classification in industry(click prediction, credit risk)?`
+ 
+Generaly, we have several metrics to choose from -- **precision, recall, f1-score, ROC AUC score, and PR AUC score**. So the question turns into Why choose average precision than others?
+
+Firstly, we do care about **the precision and recall rate**; however, we do not care any of them singly, since there is a tradeoff between precision and recall according to different thresholds setted. As a result, a metric that considers both precision and recall is required.
+
+**F1-score** is the harmonic mean of precision and recall. A regular mean treats precision and recall equally, while f1-score puts more weights on the lower one. It seems like f1-score finds a balance between precision and recall, however it depends on thresholds as well. What we need is a metric that considers both precision and recall, and does not depend on thresholds. 
+
+Both **ROC AUC score** and **PR AUC score** measure distinguish capacity of a classifier, which is independent from thresholds. The receiver operating curve(ROC) plots recall to (1-specificity); while PR curve plots precision to recall. As a result, PR AUC cares more precision than specificity, compared to ROC AUC.
+
+Assume we care more about precision than specifity, we choose PR AUC score as our metric.
+
+Moreover, considering the imbalanced data, the ROC AUC score may look good, for few positive instances than the negatives; while the PR curve score provides a better metric to show how much we can improve.
+
+Therefore, we choose average precision.
+
  **Business**
  
 Considering your clients or boss, "do NOT use AUC-ROC, PR-Curve Area (Average Precision score), etc for business reporting. Use Derived Metrics since they easily capture the essence of your business easily," like fixing the precision (or recall) according to your business and reporting your recall (or precision).
