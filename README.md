@@ -1,6 +1,8 @@
 # Data Sciense Consulting
 
-I generaly work as a data science consultant, which combines the role of data scientist and consultant. Based on my working experience, I established a data science project framework to facilate my daily work. Five aspects are summarized in the framework and can be regarded as a work process to fulfill a data science project; as a result and for esay-memorize, I set it as **One Week Data Science Framework**. 
+I generaly work as a data science consultant, which combines roles of the data scientist and the consultant in IBM. 
+
+As a data scientist, I focus on the machine learning (including deep learning), knowledge graph, and the intersection of them. Based on my working experience, I established a data science project framework to facilate my daily work. Five aspects are summarized in the framework and can be regarded as a work process to fulfill a data science project; as a result and for esay-memorize, I set it as **One Week Data Science Framework**. 
 
 |Day of Week|Key|Content|
 |-----------|---|-------|
