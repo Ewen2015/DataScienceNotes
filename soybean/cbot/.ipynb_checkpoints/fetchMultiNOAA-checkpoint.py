@@ -16,7 +16,7 @@ STATION_PATH = DATA_PATH+'StationID.csv'
 
 datatypeList = ["PRCP","SNOW","SNWD","TMAX","TMIN","TOBS","WESF"]
 df_stations = pd.read_csv(STATION_PATH)
-token = ''
+token = 'ZnqyjnhsxDGhDNENHdnokRwIHMHJLCdo'
 
 def OneStationOneType(station_id, state, datatypeid, startdate, enddate, token):
     print('[NOTE]station id: ' + station_id)
