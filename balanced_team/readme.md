@@ -4,9 +4,18 @@
 
 [ABC](https://github.com/A-Better-Community) tries to ultize algorithm and information collected to generate consulting teams, instead of by human with inbalanced data and in most cased by chance.
 
+## potential approaches
+
+1. define a successful match: 1) similarity 2) complementary 3) others
+2. data collection: 1) test (测评) 2) constellation 3）skills according to projects
+3. algorithm: simple rules 
+
 ## research
 ### algorithms
 1. [Stable Marriage Problem, SMP](https://en.wikipedia.org/wiki/Stable_marriage_problem)
+
+![](https://miro.medium.com/max/1086/1*ME9Qli0uDQiDQD0hsaIiug.png)
+
 2. [How to design an algorithm to generate balanced teams?](https://cs.stackexchange.com/questions/93533/how-to-design-an-algorithm-to-generate-balanced-teams)
 3. [Creating Simple Rules for Complex Decisions](https://hbr.org/2017/04/creating-simple-rules-for-complex-decisions)
 
