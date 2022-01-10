@@ -284,7 +284,7 @@ def main():
 
         #时间计数+1，并绘制提示文字
         frame+=1
-        screen.blit(pygame.font.Font(font, 24).render("time (minutes): {}".format(frame*4), 1, green), (250,2))
+        screen.blit(pygame.font.Font(font, 24).render("time (m): {}".format(frame*4), 1, green), (250,2))
         screen.blit(pygame.font.Font(font, 22).render("blue: human beings", 1, human_color), (700,2))
         screen.blit(pygame.font.Font(font, 22).render("red: pigs", 1, pig_color), (950,2))
 
