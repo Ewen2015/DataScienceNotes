@@ -301,9 +301,9 @@ def main():
 
         #绘制是否开启目标线的提示文字
         if draw_target_line:
-            screen.blit(pygame.font.Font(font,22).render("S key for target line: on", 1, yellow),(600,750))
+            screen.blit(pygame.font.Font(font,22).render("press S for target line: on", 1, yellow),(600,750))
         else:
-            screen.blit(pygame.font.Font(font,22).render("S key for target line: off", 1, gray),(600,750))
+            screen.blit(pygame.font.Font(font,22).render("press S for target line: off", 1, gray),(600,750))
 
         #开始抓猪
         #把已经被抓住的猪从列表里删除
