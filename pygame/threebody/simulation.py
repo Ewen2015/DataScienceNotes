@@ -3,7 +3,6 @@ import scipy as sci
 import matplotlib.pyplot as plt
 from matplotlib import animation
 from scipy import integrate
-
 class metaverse():
     def __init__(self):
         #Define universal gravitation constant
