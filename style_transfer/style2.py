@@ -61,7 +61,7 @@ class StyleTransfer(object):
         }
         
         self.best_loss, self.best_img = float('inf'), None
-
+        self.imgs = []
 
     def load_resize_img(self, path, max_dim=512):
         img = Image.open(path)
@@ -187,7 +187,7 @@ class StyleTransfer(object):
         # Accumulate content losses from all layers 
         weight_per_content_layer = 1.0 / float(self.num_layers_content)
         for target_content, comb_content in zip(self.features_content, content_output_features):
-            self.score_content += weight_per_content_layer* self.get_loss_content(comb_content[0], target_content)
+            self.score_content += weight_per_content_layer * self.get_loss_content(comb_content[0], target_content)
 
         self.score_style *= self.weight_style
         self.score_content *= self.weight_content
@@ -207,14 +207,19 @@ class StyleTransfer(object):
         return tape.gradient(self.loss_total, self.cfg['input_vgg_init']), self.losses
 
 
-    def optimize(self, iterations=1000, display=True, display_interval=1):
+    def optimize(self, 
+                 iterations=1000, learning_rate=5, beta_1=0.99, epsilon=1e-1,
+                 display=True, display_interval=1, clear_cache=True):
         
+        if clear_cache:
+            self.imgs = []
+            
         self.iterations = iterations
         self.display = display 
         self.display_interval = display_interval
 
         # Create our optimizer
-        opt = tf.optimizers.Adam(learning_rate=5, beta_1=0.99, epsilon=1e-1)
+        opt = tf.optimizers.Adam(learning_rate=learning_rate, beta_1=beta_1, epsilon=epsilon)
         
         start_time = time.time()
         global_start = time.time()
@@ -223,7 +228,6 @@ class StyleTransfer(object):
         min_vals = -norm_means
         max_vals = 255 - norm_means 
         
-        self.imgs = []
         for i in range(self.iterations):
             self.grads, self.losses = self.compute_grads()
             self.loss, self.score_style, self.score_content = self.losses
@@ -252,7 +256,8 @@ class StyleTransfer(object):
                     print('Total loss: {:.2e}, ' 
                           'style loss: {:.2e}, '
                           'content loss: {:.2e}, '
-                          'time: {:.4f}s'.format(self.loss, self.score_style, self.score_content, time.time() - start_time))
+                          'time: {:.4f}s'.format(self.loss, self.score_style, self.score_content, 
+                                                 time.time()-start_time))
         Image.fromarray(self.best_img)
         return None
 
