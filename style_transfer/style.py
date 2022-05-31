@@ -74,6 +74,8 @@ def setup_model():
                     'block4_conv1', 
                     'block5_conv1']
 
+    global num_layers_content
+    global num_layers_style
     num_layers_content = len(layers_content)
     num_layers_style = len(layers_style)
 
@@ -103,8 +105,8 @@ def feature_representations(model, path_content, path_style):
     outputs_content = model(input_vgg_content)
 
     # Get the style and content feature representations from our model  
-    features_style = [style_layer[0] for style_layer in outputs_style[:num_style_layers]]
-    features_content = [content_layer[0] for content_layer in outputs_content[num_style_layers:]]
+    features_style = [style_layer[0] for style_layer in outputs_style[:num_layers_style]]
+    features_content = [content_layer[0] for content_layer in outputs_content[num_layers_style:]]
     return features_style, features_content
 
 
@@ -134,20 +136,20 @@ def compute_loss(model, loss_weights, input_vgg_init, features_style_gram, featu
     # our model is callable just like any other function!
     outputs_model = model(input_vgg_init)
 
-    style_output_features = outputs_model[:num_style_layers]
-    content_output_features = outputs_model[num_style_layers:]
+    style_output_features = outputs_model[:num_layers_style]
+    content_output_features = outputs_model[num_layers_style:]
 
     score_style = 0
     score_content = 0
 
     # Accumulate style losses from all layers
     # Here, we equally weight each contribution of each loss layer
-    weight_per_style_layer = 1.0 / float(num_style_layers)
+    weight_per_style_layer = 1.0 / float(num_layers_style)
     for target_style, comb_style in zip(features_style_gram, style_output_features):
         score_style += weight_per_style_layer * get_style_loss(comb_style[0], target_style)
 
     # Accumulate content losses from all layers 
-    weight_per_content_layer = 1.0 / float(num_content_layers)
+    weight_per_content_layer = 1.0 / float(num_layers_content)
     for target_content, comb_content in zip(features_content, content_output_features):
         score_content += weight_per_content_layer* get_content_loss(comb_content[0], target_content)
 
@@ -169,12 +171,13 @@ def compute_grads(cfg):
     return tape.gradient(loss_total, cfg['input_vgg_init']), losses
 
 
-def optimize(best_img, best_loss, input_vgg_init, iterations=1000, display=True, display_interval=1, cfg=None):
+def optimize(best_img, best_loss, input_vgg_init, 
+             iterations=1000, cfg=None, 
+             display=True, display_interval=1):
     
     # Create our optimizer
     opt = tf.optimizers.Adam(learning_rate=5, beta_1=0.99, epsilon=1e-1)
     
-    display_interval = 1
     start_time = time.time()
     global_start = time.time()
 
@@ -214,7 +217,8 @@ def optimize(best_img, best_loss, input_vgg_init, iterations=1000, display=True,
                       'time: {:.4f}s'.format(loss, score_style, score_content, time.time() - start_time))
     return best_img, best_loss, input_vgg_init
 
-def styleTransfer(path_content=None, path_style=None, iterations=1000, display=False, continue_transfer=False):
+def styleTransfer(path_content=None, path_style=None, iterations=1000, 
+                  display=False, display_interval=1, continue_transfer=False):
     
     model = setup_model()
     
@@ -239,8 +243,11 @@ def styleTransfer(path_content=None, path_style=None, iterations=1000, display=F
       'features_content': features_content
     }
     
-    best_img, best_loss, input_vgg_init = optimize(best_img, best_loss, input_vgg_init, 
-                                                   iterations=iterations, display=display, cfg=cfg)
+    best_loss, best_img = float('inf'), None
+    
+    best_img, best_loss, input_vgg_init = optimize(best_img, best_loss, input_vgg_init,
+                                                   iterations=1000, cfg=cfg, 
+                                                   display=True, display_interval=1)
     if continue_transfer:
         return best_img, best_loss, cfg
     
@@ -267,3 +274,16 @@ def show_results(best_img, path_content, path_style, show_large_final=True):
         plt.show()
     return None
 
+def show_inputs(path_content, path_style):
+    plt.figure(figsize=(15,15))
+
+    content = load_resize_img(path_content).astype('uint8')
+    style = load_resize_img(path_style).astype('uint8')
+
+    plt.subplot(1, 2, 1)
+    display_img(content, 'Content Image')
+
+    plt.subplot(1, 2, 2)
+    display_img(style, 'Style Image')
+    plt.show()
+    return None
