@@ -197,6 +197,7 @@ def optimize(best_img, best_loss, input_vgg_init, iterations=1000, display=True,
             best_img = deprocess_img(input_vgg_init.numpy())
         
         if display:
+            import IPython.display
             if i % display_interval== 0:
                 start_time = time.time()
 
@@ -243,6 +244,7 @@ def styleTransfer(path_content=None, path_style=None, iterations=1000, display=F
     if continue_transfer:
         return best_img, best_loss, cfg
     
+    Image.fromarray(best_img)
     return best_img
     
 
