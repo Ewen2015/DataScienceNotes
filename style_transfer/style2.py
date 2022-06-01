@@ -111,6 +111,10 @@ class StyleTransfer(object):
         return x
 
     def setup_model(self):
+
+        vgg = tf.keras.applications.VGG19(include_top=False, weights='imagenet')
+        vgg.trainable = False
+
         # Content layer where will pull our feature maps
         layers_content = ['block5_conv2'] 
 
@@ -123,10 +127,7 @@ class StyleTransfer(object):
 
         self.num_layers_content = len(layers_content)
         self.num_layers_style = len(layers_style)
-
-        vgg = tf.keras.applications.VGG19(include_top=False, weights='imagenet')
-        vgg.trainable = False
-
+        
         # Get output layers corresponding to style and content layers 
         outputs_style = [vgg.get_layer(name).output for name in layers_style]
         outputs_content = [vgg.get_layer(name).output for name in layers_content]
