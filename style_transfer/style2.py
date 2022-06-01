@@ -209,7 +209,7 @@ class StyleTransfer(object):
 
     def optimize(self, 
                  iterations=1000, learning_rate=5, beta_1=0.99, epsilon=1e-1,
-                 display=True, display_interval=1, clear_cache=True):
+                 display=True, display_interval=1, cache_interval=50, clear_cache=False):
         
         if clear_cache:
             self.imgs = []
@@ -217,6 +217,7 @@ class StyleTransfer(object):
         self.iterations = iterations
         self.display = display 
         self.display_interval = display_interval
+        self.cache_interval = cache_interval
 
         # Create our optimizer
         opt = tf.optimizers.Adam(learning_rate=learning_rate, beta_1=beta_1, epsilon=epsilon)
@@ -241,18 +242,20 @@ class StyleTransfer(object):
                 self.best_loss = self.loss
                 self.best_img = self.deprocess_img(self.input_vgg_init.numpy())
             
+            # Use the .numpy() method to get the concrete numpy array
+            plot_img = self.input_vgg_init.numpy()
+            plot_img = self.deprocess_img(plot_img)
+
+            if i % self.cache_interval== 0:
+                self.imgs.append(plot_img)
+                        
             if self.display:
                 import IPython.display
                 if i % self.display_interval== 0:
-                    start_time = time.time()
-
-                    # Use the .numpy() method to get the concrete numpy array
-                    plot_img = self.input_vgg_init.numpy()
-                    plot_img = self.deprocess_img(plot_img)
-                    self.imgs.append(plot_img)
+                    start_time = time.time()                    
                     IPython.display.clear_output(wait=True)
                     IPython.display.display_png(Image.fromarray(plot_img))
-                    print('Iteration: {}'.format(i))        
+                    print('Iteration: {}'.format(i+1))        
                     print('Total loss: {:.2e}, ' 
                           'style loss: {:.2e}, '
                           'content loss: {:.2e}, '
@@ -289,4 +292,18 @@ class StyleTransfer(object):
         self.display_img(self.style, 'Style Image')
         plt.show()
         return None
-            
+    
+    def save_gif(self, path='style_transfer.gif'):
+        images = []
+
+        for i in self.imgs:
+            images.append(Image.fromarray(i))
+
+        images[0].save(path,
+                       save_all=True, append_images=images[1:], 
+                       optimize=False, duration=10, loop=0)
+        return None
+    
+    def save_pic(self, path='style_transfer.jpg'):
+        Image.fromarray(self.best_img).save(path)
+        return None
