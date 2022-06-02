@@ -211,15 +211,19 @@ class StyleTransfer(object):
     def optimize(self, 
                  iterations=1000, learning_rate=5, beta_1=0.99, epsilon=1e-1,
                  display=True, display_interval=1, cache_interval=50, clear_cache=False):
-        
-        if clear_cache:
-            self.imgs = []
             
         self.iterations = iterations
         self.display = display 
         self.display_interval = display_interval
         self.cache_interval = cache_interval
-
+        
+        if clear_cache:
+            self.imgs = []
+        # Use the .numpy() method to get the concrete numpy array
+        plot_img = self.input_vgg_init.numpy()
+        plot_img = self.deprocess_img(plot_img)
+        self.imgs.append(plot_img)
+                
         # Create our optimizer
         opt = tf.optimizers.Adam(learning_rate=learning_rate, beta_1=beta_1, epsilon=epsilon)
         
