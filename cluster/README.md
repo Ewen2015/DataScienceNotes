@@ -43,6 +43,24 @@ Or Linkage Clustering, good for when we don’t necessarily have **circular (or 
 ### Affinity Propagation
 
 
+## Illustrators
+
+**K-Means Clustering**
+<p align="center">
+    <img width="400" src="https://uploads.toptal.io/blog/image/92528/toptal-blog-image-1463672901961-c86610183bb2ba67f979c421f6748893.gif">
+</p>
+
+**EM Clustering**
+<p align="center">
+    <img width="400" src="https://uploads.toptal.io/blog/image/92523/toptal-blog-image-1463639195822-62ac974368c9d3e4c1501368ae75e321.jpg">
+</p>
+
+**Linkage Clustering**
+<p align="center">
+    <img width="400" src="https://uploads.toptal.io/blog/image/92525/toptal-blog-image-1463639301381-ac46f23d267a0150ea7f3804b456a802.jpg">
+</p>
+
+
 
 
 ## References:
