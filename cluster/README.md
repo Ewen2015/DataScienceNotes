@@ -66,6 +66,6 @@ Or Linkage Clustering, good for when we don’t necessarily have **circular (or 
 ## References:
 
 1. [Brendan J. Frey and Delbert Dueck, “Clustering by Passing Messages Between Data Points”, Science Feb. 2007](https://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.121.3145)
-2. [James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani, eds. An Introduction to Statistical Learning: With Applications in R. Springer Texts in Statistics 103. New York: Springer, 2013.](https://www.statlearning.com/)
-3. [ESL: The Elements of Statistical Learning by Hastie, Tibshirani and Friedman.](https://hastie.su.domains/ElemStatLearn/)
+2. [Hastie, Trevor, Robert Tibshirani, and J. H. Friedman. The Elements of Statistical Learning: Data Mining, Inference, and Prediction. 2nd ed. Springer Series in Statistics. New York, NY: Springer, 2009.](https://hastie.su.domains/ElemStatLearn/)
+3. [James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani, eds. An Introduction to Statistical Learning: With Applications in R. Springer Texts in Statistics 103. New York: Springer, 2013.](https://www.statlearning.com/)
 4. [Clustering Algorithms: From Start To State Of The Art](https://www.toptal.com/machine-learning/clustering-algorithms)
