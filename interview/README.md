@@ -38,4 +38,6 @@ $$ \hat f_{bag}(x) = \frac{1}{B}\sum_{b=1}^B \hat f^{*b}(x) $$
 
 *a random sample of m predictors* is chosen as split candidates from the full set of p predictors. 
 
+3. boosting
+
 Boosting works in a similar way, except that the trees are grown **sequentially**: each tree is grown using information from previously grown trees.
