@@ -1,5 +1,15 @@
 # Clustering Algorithms Review
 
+* [Philosophy](#philosophy)
+* [Mathematical Explainations](#mathematical-explainations)
+    * [K-Means Clustering](#k-means-clustering)
+    * [Gaussian Mixtures](#gaussian-mixtures)
+    * [Hierarchical Clustering](#hierarchical-clustering)
+    * [Affinity Propagation](#affinity-propagation)
+* [Illustrators](#illustrators)
+* [Evaluation](#evaluation)
+* [References](#references)
+
 ## Philosophy
 
 Central to all of the goals of cluster analysis is the notion of the degree of **similarity** (or dissimilarity) between the individual objects being clustered. ... **Fundamental to all clustering techniques is the choice of distance or dissimilarity measure between two objects.** (ESL)
@@ -29,7 +39,8 @@ Because the K-means algorithm finds a **local** rather than a **global optimum**
 
 A good balance is **K-Means++** variant [Arthur and Vassilvitskii, 2006](http://ilpubs.stanford.edu:8090/778/1/2006-13.pdf), whose initialization will still pick random points, but with probability proportional to square distance from the previously assigned centroids. Points that are further away will have higher probability to be selected as starting centroids. (Lovro Iliassich)
 
-### Gaussian Mixtures as Soft K-means Clustering: EM (Expectation-Maximization) Method
+### Gaussian Mixtures 
+### as Soft K-means Clustering: EM (Expectation-Maximization) Method
 
 With EM Clustering, we can now go a step further and describe each cluster by its centroid (mean), covariance (so that we can have **elliptical clusters**), and weight (the size of the cluster). The probability that a point belongs to a cluster is now given by **a multivariate Gaussian probability distribution** (multivariate - depending on multiple variables). That also means that we can calculate the probability of a point being under **a Gaussian ‘bell’**, i.e. the probability of a point belonging to a cluster.
 
@@ -38,7 +49,7 @@ With EM Clustering, we can now go a step further and describe each cluster by it
 
 EM is a “soft” version of K-means clustering, making **probabilistic** (rather than **deterministic**) assignments of points to cluster centers. **As the variance $/sigma^2 \rightarrow 0$, these probabilities become 0 and 1, and the two methods coincide.**
 
-### Hierarchical Agglomerative Clustering
+### Hierarchical Clustering
 
 Strategies for hierarchical clustering divide into **two basic paradigms: agglomerative (bottom-up) and divisive (top-down)**. Agglomerative strategies start at the bottom and at each level recursively merge a selected pair of clusters into a single cluster. This produces a grouping at the next higher level with one less cluster. The pair chosen for merging consist of the two groups with the smallest intergroup dissimilarity. Divisive methods start at the top and at each level recursively split one of the existing clusters at that level into two new clusters. The split is chosen to produce two new groups with the largest between-group dissimilarity. With both paradigms there are N − 1 levels in the hierarchy.
 
@@ -65,7 +76,7 @@ Or Linkage Clustering, good for when we don’t necessarily have **circular (or 
 </p>
 
 
-### Evaluation
+## Evaluation
 
 [StakeExchange](https://stats.stackexchange.com/questions/195456/how-to-select-a-clustering-method-how-to-validate-a-cluster-solution-to-warran)
 
