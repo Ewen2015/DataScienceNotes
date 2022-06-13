@@ -26,7 +26,7 @@ $$ y(t) = g(t) + s(t) + h(t) + \epsilon_t $$
 - $g(t)$ is the trend function which models non-periodic changes in the value of the time series
 - $s(t)$ represents periodic changes (e.g., weekly and yearly seasonality)
 - $h(t)$ represents the effects of holidays which occur on potentially irregular schedules over one or more days
-- $\epsilon_t$, the error term represents any idiosyncratic changes which are not accommodated by the model; later we will make the parametric assumption that $\epsilon_t$ is normally distributed.
+- $\epsilon_t$, the error term, represents any idiosyncratic changes which are not accommodated by the model; later we will make the parametric assumption that $\epsilon_t$ is normally distributed.
 
 This specification is similar to **a generalized additive model (GAM)** (Hastie & Tibshirani 1987), a class of regression models with potentially non-linear smoothers applied to the regressors.
 
@@ -34,10 +34,10 @@ This specification is similar to **a generalized additive model (GAM)** (Hastie 
 
 "We are, in effect, framing the forecasting problem as **a curve-fitting exercise**, which is inherently different from time series models that explicitly account for the **temporal dependence** structure in the data. While we give up some important inferential advantages of using **a generative model such as an ARIMA**, this formulation provides a number of practical advantages:
 
-– Flexibility: We can easily accommodate seasonality with multiple periods and let the analyst make different assumptions about trends.
-– Unlike with ARIMA models, the measurements do not need to be regularly spaced, and we do not need to interpolate missing values e.g. from removing outliers. 
-– Fitting is very fast, allowing the analyst to interactively explore many model specifications, for example in a Shiny application (Chang et al. 2015). 
-– The forecasting model has easily interpretable parameters that can be changed by the analyst to impose assumptions on the forecast. Moreover, analysts typically do have experience with regression and are easily able to extend the model to include new components."
+- **Flexibility**: We can easily accommodate seasonality with multiple periods and let the analyst make different assumptions about trends.
+- Unlike with ARIMA models, the measurements **do not need to be regularly spaced**, and we **do not need to interpolate missing values** e.g. from removing outliers. 
+- **Fitting is very fast**, allowing the analyst to interactively explore many model specifications, for example in a Shiny application (Chang et al. 2015). 
+- The forecasting model has **easily interpretable parameters** that can be changed by the analyst to impose assumptions on the forecast. Moreover, analysts typically do have experience with regression and are easily able to extend the model to include new components."
 
 Facebook Prophet **doesn't look for any such causal relationships between past and future**. Instead, it simply tries **to find the best curve to fit to the data (curve-fitting)**, using **a linear or logistic curve**, and **Fourier coefficients for the seasonal components**. There is also a regression component, but that is for external regressors, not for the time series itself (The Prophet model is a special case of **GAM - Generalized Additive Model**).
 
