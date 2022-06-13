@@ -42,10 +42,17 @@ A **residual** is the difference between  **the observed value and the predicted
 
 |measures|formula|
 |--------|-------|
-|scale-dependent errors| mean absolute error: $MAE=mean(|e_t|)$; root mean squared error: $RMSE=\root(mean(e_t^2))$|
-|percentage errors| mean absolute percentage error: $MAPE=mean(|p_t|)$|
-|scaled errors| mean absolute scaled error: $MASE=mean(|q_j|)$|
+|scale-dependent errors| mean absolute error (MAE); root mean squared error(RMSE) |
+|percentage errors| mean absolute percentage error (MAPE) |
+|scaled errors| mean absolute scaled error (MASE) |
 
+$$ MAE = mean(|e_t|)$$
+
+$$ RMSE = \sqrt(mean(e_t^2)) $$
+
+$$ MAPE = mean(|p_t|) $$
+
+$$ MASE = mean(|q_j|) $$
 
 ## References
 
