@@ -48,7 +48,7 @@ A **residual** is the difference between  **the observed value and the predicted
 
 $$ MAE = mean(|e_t|)$$
 
-$$ RMSE = \sqrt(mean(e_t^2)) $$
+$$ RMSE = \sqrt{mean(e_t^2)} $$
 
 $$ MAPE = mean(|p_t|) $$
 
@@ -58,4 +58,4 @@ $$ MASE = mean(|q_j|) $$
 
 1. [Inference in Time Series: Prophet vs. ARIMA](https://stats.stackexchange.com/questions/472266/inference-in-time-series-prophet-vs-arima)
 2. [What is the difference between errors and residuals?](https://stats.stackexchange.com/questions/133389/what-is-the-difference-between-errors-and-residuals)
-3. 
+3. [Evaluating forecast accuracy](https://otexts.com/fpp2/accuracy.html)
