@@ -19,7 +19,7 @@ e.g. the volatility of a stock today is causally driven by the volatility of tha
 
 ### Mathematics
 
-The core model of Prophet is a structural time series model (Harvey & Peters 1990).
+The core model of Prophet is **a structural time series model** (Harvey & Peters 1990).
 
 $$ y(t) = g(t) + s(t) + h(t) + \epsilon_t $$
 
