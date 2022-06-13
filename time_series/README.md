@@ -34,9 +34,14 @@ Generally, NeuralProphet is better on **smaller datasets**, but Prophet is bette
 
 ## Evaluation
 
+### Errors and Residuals
+
+
 
 
 
 ## References
 
-1. []()
+1. [Inference in Time Series: Prophet vs. ARIMA](https://stats.stackexchange.com/questions/472266/inference-in-time-series-prophet-vs-arima)
+2. [What is the difference between errors and residuals?](https://stats.stackexchange.com/questions/133389/what-is-the-difference-between-errors-and-residuals)
+3. 
