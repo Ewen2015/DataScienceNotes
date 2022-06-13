@@ -32,6 +32,24 @@ In theory, a more rigorous causal or structural approach is more likely to captu
 
 Generally, NeuralProphet is better on **smaller datasets**, but Prophet is better with **lots of training data**.
 
+Neural Prophet是升级版的Prophet。虽然官方PPT写了很多改变，但是其实就是基于两个”巨变“。
+
+- **第一个巨变是分解的分量增加了一个重量级的AR（自回归），这个是超级重量级的**。
+  - 因为AR模型本身在经典时序分析里面就独当一面，到了Neural Prophet里面做为辅助，它对于精度的提高是神级的。
+  - 相比于传统的AR模型，这里的AR模型借助于神经网络，拟合的更加快捷和精确。
+  - 一招鲜，吃遍天，FB把正则用的炉火纯青。对于AR模型也添加了正则项（参数为ar_sparsity）。
+  - 通过正则加持，你的AR模型可以看的更远，因为你有能力使用更多的历史数据而不用担心求解。
+- **第二个巨变是Pytorch作为backend**。
+  - Neural Prophet把所有的分量都用pytorch写了，这才是真正的开源了代码。
+  - 趋势项，周期项变化不大，因为他们的算法还是和Prophet一致
+  - AR项，外部回归项变化很大，因为有了Pytorch的加持，意味着你不用再局限于线性回归。
+  - 从源码看，Neural Prophet采用Relu非线性化了。
+  - 而且，神经网络嘛，最适合魔改，看着结果不顺眼，改改层数，说不定就顺眼了。
+
+这两个巨变其实目前还是很有诚意的，但是我还在等它更大的feature: **Global model**. Global model 模型意味着一个模型适配多个时序，比如同时预测iphone11，12，13，甚至未面世的iphone 18的销量（冷启动问题）。 
+
+NeuralPorphet 看起来那么神，其实就是一个全自动的AR，在我看来，它就是**Pytorch版的SARIMAX**。
+
 ## Evaluation
 
 **Errors and Residuals**
@@ -59,3 +77,4 @@ $$ MASE = mean(|q_j|) $$
 1. [Inference in Time Series: Prophet vs. ARIMA](https://stats.stackexchange.com/questions/472266/inference-in-time-series-prophet-vs-arima)
 2. [What is the difference between errors and residuals?](https://stats.stackexchange.com/questions/133389/what-is-the-difference-between-errors-and-residuals)
 3. [Evaluating forecast accuracy](https://otexts.com/fpp2/accuracy.html)
+4. [为什么NeuralProphet这么准，看这一篇真的就够了](https://mp.weixin.qq.com/s/AJQGZfopVCdpjdyf5bQHqA)
