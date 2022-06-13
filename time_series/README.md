@@ -4,21 +4,28 @@
 - [Prophet](#Prophet)
 - [NeuralProphet](#NeuralProphet)
 - [Evaluation](#Evaluation)
+- [References](#References)
 
 
 ## SARIMAX
 
-ARIMA and similar models assume some sort of causal relationship between past values and past errors and future values of the time series:
+ARIMA and similar models **assume some sort of causal relationship between past values and past errors and future values** of the time series:
 
-$$ Y_{t+h} = f(Y_t, Y_{t-1}, Y_{t-2}, ..., \eps) $$
+$$ Y_{t+h} = f(Y_t, Y_{t-1}, Y_{t-2}, ..., \epsilon_{t}, \epsilon_{t-1}, \epsilon_{t-2}, ...) $$
 
 e.g. the volatility of a stock today is causally driven by the volatility of that stock yesterday and two days ago, the population of a species this year is a direct function of the population of that same species last year, etc...
 
 ## Prophet
 
-Prophet is a procedure for forecasting time series data based on **an additive model** where non-linear trends are fit with yearly, weekly, and daily seasonality, plus holiday effects. **It works best with time series that have strong seasonal effects and several seasons of historical data. Prophet is robust to missing data and shifts in the trend, and typically handles outliers well.**
+Facebook Prophet **doesn't look for any such causal relationships between past and future**. Instead, it simply tries **to find the best curve to fit to the data (curve-fitting)**, using **a linear or logistic curve**, and **Fourier coefficients for the seasonal components**. There is also a regression component, but that is for external regressors, not for the time series itself (The Prophet model is a special case of **GAM - Generalized Additive Model**).
 
-Prophet is a special case of the **Generalized Additive Model**. Whereas ARIMA tries to build **a formula for future values as a function of past values**,  Prophet tries **to detect “change points”**; you can think of Prophet as **curve-fitting**.  
+Theoretically speaking, **the assumptions underlying Prophet are indeed simplistic and weak** - just **fit the best curve to your historical data**. Since fitting a curve to a limited data set over a specific time period doesn't impose any constraints on how the curve behaves outside of your historical data set, it is entirely possible that the best fitting curve will "go off the rails" outside of the historical time interval. For example, I have often noticed that Prophet can go negative in the future, even if the historical data set has only positive values, because the simplistic assumptions mean that it will naively perpetuate a downward trend forever.
+
+This why prophet is **recommended only for time series where the only informative signals are (relatively stable) trend and seasonality, and the residuals are just noise**.
+
+In theory, a more rigorous causal or structural approach is more likely to capture signals that will extrapolate into the future. More importantly, if **the residuals are not just noise**, then an ARIMA model or a Neural Network might be able to capture those relationships...in theory.
+
+**It works best with time series that have strong seasonal effects and several seasons of historical data. Prophet is robust to missing data and shifts in the trend, and typically handles outliers well.**
 
 
 ## NeuralProphet
@@ -27,3 +34,9 @@ Generally, NeuralProphet is better on **smaller datasets**, but Prophet is bette
 
 ## Evaluation
 
+
+
+
+## References
+
+1. []()
