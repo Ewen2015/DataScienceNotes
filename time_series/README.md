@@ -52,6 +52,23 @@ In theory, a more rigorous causal or structural approach is more likely to captu
 
 ## NeuralProphet
 
+### Mathematics
+
+A core concept of the NeuralProphet model is its **modular composability**. The model is composed of modules which each contribute an **additive** component to the forecast. Most components can also be configured to be scaled by the trend for a **multiplicative effect**. Each module has its individual inputs and modelling processes.
+
+$$ y(t) = T(t) + S(t) + E(t) + F(t) + A(t) + L(t) $$
+
+where, 
+
+- $T(t) =$ Trend at time $t$ 
+- $S(t) =$ Seasonal effects at time $t$ 
+- $E(t) =$ Event and holiday effects at time $t$ 
+- $F(t) =$ Regression effects at time $t$ for future-known exogenous variables 
+- $A(t) =$ Auto-regression effects at time $t$ based on past observations 
+- $L(t) =$ Regression effects at time $t$ for lagged observations of exogenous variables
+
+### Comments
+
 Generally, NeuralProphet is better on **smaller datasets**, but Prophet is better with **lots of training data**.
 
 Neural Prophet是升级版的Prophet。虽然官方PPT写了很多改变，但是其实就是基于两个”巨变“。
@@ -102,6 +119,6 @@ $$ MASE = mean(|q_j|) $$
 3. [Evaluating forecast accuracy](https://otexts.com/fpp2/accuracy.html)
 4. [为什么NeuralProphet这么准，看这一篇真的就够了](https://mp.weixin.qq.com/s/AJQGZfopVCdpjdyf5bQHqA)
 5. [Data generating process](https://en.wikipedia.org/wiki/Data_generating_process#:~:text=In%20statistics%20and%20in%20empirical,real%20models%20have%20observable%20consequences.)
-6. [Taylor, Sean J., and Benjamin Letham. “Forecasting at Scale.” PeerJ Inc., September 27, 2017. https://doi.org/10.7287/peerj.preprints.3190v2.](https://peerj.com/preprints/3190)
+6. [Taylor, Sean J., and Benjamin Letham. “Forecasting at Scale.” PeerJ Inc., September 27, 2017.](https://peerj.com/preprints/3190)
 7. [Harvey, A C, and S Peters. “Estimation Procedures for Structural Time Series Models” 9, no. 2 (n.d.): 21.](http://www.stat.yale.edu/~lc436/papers/Harvey_Peters1990.pdf)
-8. []
+8. [Triebe, Oskar, Hansika Hewamalage, Polina Pilyugina, Nikolay Laptev, Christoph Bergmeir, and Ram Rajagopal. “NeuralProphet: Explainable Forecasting at Scale.” arXiv, November 29, 2021.](http://arxiv.org/abs/2111.15397)
