@@ -2,7 +2,7 @@
 
 - [Statistical Tests](#Statistical-Tests)
 - [Hypothesis Test](#Hypothesis-Test)
-- [P Value](P-Value)
+- [P-value](P-value)
 
 ## Statistical Tests
 
@@ -17,7 +17,7 @@
 <img src='https://github.com/Ewen2015/DataScienceNotes/blob/master/stat/xMeanComparisonTable.jpg.pagespeed.ic.ANRLAM5qed.jpg'>
 </p>
 
-## P Value
+## P-value
 
 <p align="center">
 <img src='https://github.com/Ewen2015/DataScienceNotes/blob/master/stat/p-value.jpeg'>
