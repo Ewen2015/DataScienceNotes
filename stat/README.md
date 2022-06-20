@@ -3,7 +3,7 @@
 - [Hypothesis Test](#Hypothesis-Test)
 - [Statistical Tests](#Statistical-Tests)
 - [Degree of Freedom](#Degree-of-Freedom)
-- [P-value](P-value)
+- [P-value](#P-value)
 - [Errors](#Errors)
 - [Power Analysis](#Power-Analysis)
 - [References](#References)
