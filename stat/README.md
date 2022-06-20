@@ -10,6 +10,10 @@
 
 ## Hypothesis Test
 
+<p align="center">
+<img src='https://github.com/Ewen2015/DataScienceNotes/blob/master/stat/Harmonia_Macrocosmica.jpeg'>
+</p>
+
 **The main purpose of statistics is to test a hypothesis.**
 
 **A hypothesis** is **an educated guess** about something in the world around you. It should be testable, either by **experiment** or **observation**. For example:
