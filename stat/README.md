@@ -6,7 +6,7 @@
 - [P-value](#P-value)
 - [Errors](#Errors)
 - [Power Analysis](#Power-Analysis)
-- [A/B Testing](#A/B-Testing)
+- [AB Testing](#A/B-Testing)
 - [References](#References)
 
 ## Hypothesis Test
@@ -93,28 +93,14 @@ For example, the statistical power can be estimated given an effect size, sample
 
 > A/B testing is a way to compare two versions of a single variable, typically by testing a subject’s response to variant A against variant B, and determining which of the two variants is more effective.
 
-### What are the Steps of A/B Testing?
+### What are the Steps of AB Testing?
 There are 5 main steps for A/B Testing:
 
-#### 1. Make a hypothesis about the change
-
-The first step is exactly what we did in the example above. i.e., We assume that changing the size of the ‘Join Now’ button from 4x3 to 16x9 will affect the number of students enrolled in our online course.
-
-#### 2. Choose the metrics
-
-E.g. We want more students to move from the course menu page to a specific course page, so we choose the ‘click-through probability’ as our metric.
-
-#### 3. Experiments
-
-Design the experiment setups (including the unit of diversion, population, size, and duration), and carry out the test.
-
-#### 4. Analyse the results
-
-Calculate the margin based on the confidence interval, and decide whether it satisfies the practical significance requirements.
-
-#### 5. Make a decision. Communicate the results and risks with stakeholders.
-
-If you feel confused about some of the concepts above, don’t worry. Let’s dive into the details!
+1. **Make a hypothesis about the change**
+2. **Choose the metrics**
+3. **Experiments**: Design the experiment setups (including the unit of diversion, population, size, and duration), and carry out the test.
+4. **Analyse the results**: Calculate the margin based on the confidence interval, and decide whether it satisfies the practical significance requirements.
+5. **Make a decision**. Communicate the results and risks with stakeholders.
 
 
 ## References:
