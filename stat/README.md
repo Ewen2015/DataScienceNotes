@@ -6,7 +6,7 @@
 - [P-value](#P-value)
 - [Errors](#Errors)
 - [Power Analysis](#Power-Analysis)
-- [AB Testing](#A/B-Testing)
+- [AB Testing](#AB-Testing)
 - [References](#References)
 
 ## Hypothesis Test
@@ -89,7 +89,7 @@ All four variables are related. For example, a larger sample size can make an ef
 
 For example, the statistical power can be estimated given an effect size, sample size and significance level. Alternately, the sample size can be estimated given different desired levels of significance.
 
-## A/B Testing
+## AB Testing
 
 > A/B testing is a way to compare two versions of a single variable, typically by testing a subject’s response to variant A against variant B, and determining which of the two variants is more effective.
 
