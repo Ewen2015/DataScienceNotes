@@ -1,4 +1,4 @@
-# interview questions
+# Regression and Grandient Boosting
 
 ## 1. least squares regression, ridge regression, and lasso regression
 
@@ -14,7 +14,7 @@ $$ RSS + \lambda\sum_{j-0}^p\beta_{j}^2 $$
 
 where $\lambda \geq 0$ is a *tuning parameter*.
 
-$\sum_{j-0}^p\beta_{j}x_{ij})^2$, *shrinkage penalty*, $l_{2}$ penalty. 
+$\sum_{j-0}^p\beta_{j}x_{ij}^2$, *shrinkage penalty*, $l_{2}$ penalty. 
 
 the ridge includes all **p** predictors in the final model.
 
