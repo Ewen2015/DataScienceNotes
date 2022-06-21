@@ -6,6 +6,7 @@
 - [P-value](#P-value)
 - [Errors](#Errors)
 - [Power Analysis](#Power-Analysis)
+- [A/B Testing](#A/B-Testing)
 - [References](#References)
 
 ## Hypothesis Test
@@ -88,9 +89,36 @@ All four variables are related. For example, a larger sample size can make an ef
 
 For example, the statistical power can be estimated given an effect size, sample size and significance level. Alternately, the sample size can be estimated given different desired levels of significance.
 
+## A/B Testing
+
+> A/B testing is a way to compare two versions of a single variable, typically by testing a subject’s response to variant A against variant B, and determining which of the two variants is more effective.
+
+### What are the Steps of A/B Testing?
+There are 5 main steps for A/B Testing:
+
+#### 1. Make a hypothesis about the change
+
+The first step is exactly what we did in the example above. i.e., We assume that changing the size of the ‘Join Now’ button from 4x3 to 16x9 will affect the number of students enrolled in our online course.
+
+#### 2. Choose the metrics
+
+E.g. We want more students to move from the course menu page to a specific course page, so we choose the ‘click-through probability’ as our metric.
+
+#### 3. Experiments
+
+Design the experiment setups (including the unit of diversion, population, size, and duration), and carry out the test.
+
+#### 4. Analyse the results
+
+Calculate the margin based on the confidence interval, and decide whether it satisfies the practical significance requirements.
+
+#### 5. Make a decision. Communicate the results and risks with stakeholders.
+
+If you feel confused about some of the concepts above, don’t worry. Let’s dive into the details!
+
 
 ## References:
 
 - [Hypothesis Testing](https://www.statisticshowto.com/probability-and-statistics/hypothesis-testing/)
 - [A Gentle Introduction to Statistical Power and Power Analysis in Python](https://machinelearningmastery.com/statistical-power-and-power-analysis-in-python/#:~:text=Statistical%20power%2C%20or%20the%20power,the%20null%20hypothesis%20is%20rejected.)
-
+- [A/B Testing 101 with Examples - A Summary of Udacity’s Course](https://towardsdatascience.com/a-b-testing-101-with-examples-a-summary-of-udacitys-course-3f937e8ea31f)
