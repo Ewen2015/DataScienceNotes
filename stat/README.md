@@ -44,6 +44,8 @@ It can really be anything at all as long as you can put it to the test.
 
 For example, there are 25 people and 25 chairs in a room. People will sit these chairs. 24 people have chance to choose their chairs. But 25th person has not chance, he can sit only one chair. So in this case degree of freedom is 24.
 
+Degrees of freedom are **important** for finding critical cutoff values for inferential statistical tests. Depending on the type of the analysis you run, degrees of freedom typically (but not always) relate the size of the sample. **Because higher degrees of freedom generally mean larger sample sizes**, a higher degree of freedom means **more power to reject a false null hypothesis** and **find a significant result**.
+
 ## P-value
 
 <p align="center">
@@ -113,3 +115,4 @@ There are 5 main steps for A/B Testing:
 - [A Gentle Introduction to Statistical Power and Power Analysis in Python](https://machinelearningmastery.com/statistical-power-and-power-analysis-in-python/#:~:text=Statistical%20power%2C%20or%20the%20power,the%20null%20hypothesis%20is%20rejected.)
 - [A/B Testing 101 with Examples - A Summary of Udacity’s Course](https://towardsdatascience.com/a-b-testing-101-with-examples-a-summary-of-udacitys-course-3f937e8ea31f)
 - [What is the method to decide the degrees of freedom in a statistical test of significance like t-test chi-square test and f-test?](https://www.quora.com/What-is-the-method-to-decide-the-degrees-of-freedom-in-a-statistical-test-of-significance-like-t-test-chi-square-test-and-f-test)
+- [Degrees of Freedom](http://sites.utexas.edu/sos/degreesfreedom/#:~:text=Because%20higher%20degrees%20of%20freedom,and%20find%20a%20significant%20result.)
