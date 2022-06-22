@@ -40,6 +40,10 @@ It can really be anything at all as long as you can put it to the test.
 
 ## Degree of Freedom
 
+**Degrees of freedom** means that number of observations which are **independent from parameter**. 
+
+For example, there are 25 people and 25 chairs in a room. People will sit these chairs. 24 people have chance to choose their chairs. But 25th person has not chance, he can sit only one chair. So in this case degree of freedom is 24.
+
 ## P-value
 
 <p align="center">
@@ -108,3 +112,4 @@ There are 5 main steps for A/B Testing:
 - [Hypothesis Testing](https://www.statisticshowto.com/probability-and-statistics/hypothesis-testing/)
 - [A Gentle Introduction to Statistical Power and Power Analysis in Python](https://machinelearningmastery.com/statistical-power-and-power-analysis-in-python/#:~:text=Statistical%20power%2C%20or%20the%20power,the%20null%20hypothesis%20is%20rejected.)
 - [A/B Testing 101 with Examples - A Summary of Udacity’s Course](https://towardsdatascience.com/a-b-testing-101-with-examples-a-summary-of-udacitys-course-3f937e8ea31f)
+- [What is the method to decide the degrees of freedom in a statistical test of significance like t-test chi-square test and f-test?](https://www.quora.com/What-is-the-method-to-decide-the-degrees-of-freedom-in-a-statistical-test-of-significance-like-t-test-chi-square-test-and-f-test)
