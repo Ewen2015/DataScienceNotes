@@ -2,7 +2,7 @@
 
 ## 1. Overview of Machine Learning System
 
-![overview]()
+<img src="https://github.com/Ewen2015/DataScienceNotes/blob/master/DMLS/overview.png" width=60% height=60%>
 
 ### When to Use Machine Learning
 
@@ -13,11 +13,10 @@
 3. Existing data: data is available, or it’s possible to collect data
 4. Predictions: it’s a predictive problem
 5. Unseen data: unseen data shares patterns with the training data
-
-6. It’s repetitive
-7. The cost of wrong predictions is cheap
-8. It’s at scale
-9. The patterns are constantly changing
+6. **It’s repetitive**
+7. **The cost of wrong predictions is cheap**
+8. **It’s at scale**
+9. **The patterns are constantly changing**
 
 ### Machine Learning Systems Versus Traditional Software
 
