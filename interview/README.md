@@ -5,13 +5,15 @@
 
 ## Regression
 
-### 1. least squares regression: 
+### 1. Least squares regression:
 
 $$ RSS = \sum_{i=1}^n(y_{i} - \beta_{0} - \sum_{j-0}^p\beta_{j}x_{ij})^2 $$
 
 residual sum of squares(RSS)
 
-### 2. lasso regression:
+### 2. LASSO regression
+
+LASSO: least absolute shrinkage and selection operator.
 
 $$ RSS + \lambda\sum_{j-0}^p|\beta_{j}| $$
 
@@ -19,7 +21,7 @@ $l_{1}$ penalty
 
 the lasso performs **variable selection**.
 
-### 3. ridge regression:
+### 3. Ridge regression
 
 $$ RSS + \lambda\sum_{j-0}^p\beta_{j}^2 $$
 
@@ -28,6 +30,11 @@ where $\lambda \geq 0$ is a *tuning parameter*.
 $\sum_{j-0}^p\beta_{j}x_{ij}^2$, *shrinkage penalty*, $l_{2}$ penalty. 
 
 the ridge includes all **p** predictors in the final model.
+
+### 4. Elastic net regularization
+
+![regulation](image/regulation.png)
+
 
 ## Tree-based Methods
 
